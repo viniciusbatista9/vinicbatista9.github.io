@@ -129,4 +129,96 @@ body { font-family: 'Poppins', sans-serif; background-color: var(--cor-fundo); c
     .hero h1 { font-size: 2em; }
     .hero-buttons { flex-direction: column; }
     .info-card { flex-direction: column; text-align: center; gap: 20px; }
+}/* --- ESTILOS PARA O MENU HAMBÚRGUER (CELULAR) --- */
+
+.hamburger {
+    display: none; /* Escondido em telas grandes */
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--cor-texto-titulo);
+}
+
+/* --- SEÇÃO DE RESPONSIVIDADE ATUALIZADA --- */
+/* Apague a @media antiga se tiver e substitua por esta */
+
+@media (max-width: 820px) {
+    /* Mostra o botão hambúrguer */
+    .hamburger {
+        display: block;
+    }
+
+    /* Animação do botão para virar um "X" */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Esconde o menu e o prepara para aparecer */
+    .nav-menu {
+        position: fixed;
+        left: -100%; /* Começa fora da tela */
+        top: 70px; /* Altura do navbar */
+        gap: 0;
+        flex-direction: column;
+        background-color: #0d1117;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    /* Mostra o menu quando o botão é clicado */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column; /* Coloca os links um abaixo do outro */
+        width: 100%;
+    }
+
+    .nav-menu li {
+        padding: 16px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+
+    /* Remove estilos desnecessários no celular */
+    .navbar nav a:hover {
+        color: var(--cor-principal);
+    }
+    .btn-cta, .btn-loja {
+        width: 80%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    /* Outros ajustes que já tínhamos */
+    .hero {
+        padding: 150px 0 50px 0;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .info-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
