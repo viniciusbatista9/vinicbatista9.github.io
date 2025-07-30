@@ -14,15 +14,23 @@
     <header class="navbar">
         <div class="container">
             <a href="index.html" class="logo">Returned WoW</a>
-            <nav>
+            
+            <nav class="nav-menu">
                 <ul>
                     <li><a href="index.html">INICIO</a></li>
                     <li><a href="index.html#download">DOWNLOAD</a></li>
                     <li><a href="addons.html">ADDONS</a></li>
+                    <li><a href="ranks.html">RANKS</a></li>
                     <li><a href="#" class="btn btn-loja">LOJA</a></li>
                     <li><a href="#" class="btn btn-cta">CRIAR CONTA</a></li>
                 </ul>
             </nav>
+
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
         </div>
     </header>
 
@@ -38,22 +46,18 @@
                     <h3 class="faq-question">Qual é o foco do servidor? PvE ou PvP?</h3>
                     <p class="faq-answer">O Returned WoW é um servidor Blizzlike com foco tanto em <strong>PvE (Player vs. Environment)</strong> quanto em <strong>PvP (Player vs. Player)</strong>. Nosso objetivo é oferecer uma experiência completa, com raides desafiadoras e um ambiente de PvP ativo e competitivo.</p>
                 </div>
-
                 <div class="faq-item">
                     <h3 class="faq-question">Existem itens customizados na loja?</h3>
                     <p class="faq-answer">Sim. Nossa loja de doações oferece alguns itens customizados, como <strong>Shirts, Tabards e Armas com edições médias</strong>. Todos os itens são cuidadosamente criados para serem altamente equilibrados e não quebrarem a experiência de jogo ou criarem um ambiente "Pay-to-Win".</p>
                 </div>
-
                 <div class="faq-item">
                     <h3 class="faq-question">Como posso reportar um bug?</h3>
                     <p class="faq-answer">Se você encontrar qualquer bug, por favor, nos ajude a corrigi-lo! Você pode <strong>abrir um ticket diretamente no jogo</strong>. Nossa equipe de GMs (Game Masters) irá verificar seu ticket assim que estiver online e tomar as providências necessárias.</p>
                 </div>
-
                 <div class="faq-item">
                     <h3 class="faq-question">Meu personagem está preso. O que eu faço?</h3>
                     <p class="faq-answer">Se o seu personagem ficar preso em alguma parte do mapa, não se preocupe. Basta digitar o comando <strong class="code-text">.shop</strong> no chat do jogo e seu personagem será automaticamente teleportado para sua cidade natal (Stormwind ou Orgrimmar).</p>
                 </div>
-                
                 <div class="faq-item">
                     <h3 class="faq-question">Qual é o realmlist para conectar?</h3>
                     <p class="faq-answer">Para se conectar, abra a pasta do seu jogo, vá em <strong>Data > ptBR</strong> (ou enUS) e edite o arquivo <strong>realmlist.wtf</strong> com o Bloco de Notas. Apague tudo e cole apenas: <br><strong class="code-text">set realmlist returnedwow.com.br</strong></p>
@@ -67,6 +71,15 @@
             <p>&copy; 2025 Returned WoW. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>

@@ -12,30 +12,31 @@
 <body>
 
     <header class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">Returned WoW</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="index.html#download">DOWNLOAD</a></li>
-                <li><a href="addons.html">ADDONS</a></li>
-                <li><a href="ranks.html">RANKS</a></li>
-                <li><a href="#" class="btn btn-loja">LOJA</a></li>
-                <li><a href="#" class="btn btn-cta">CRIAR CONTA</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+        <div class="container">
+            <a href="index.html" class="logo">Returned WoW</a>
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="#download">DOWNLOAD</a></li>
+                    <li><a href="addons.html">ADDONS</a></li>
+                    <li><a href="ranks.html">RANKS</a></li>
+                    <li><a href="#" class="btn btn-loja">LOJA</a></li>
+                    <li><a href="#" class="btn btn-cta">CRIAR CONTA</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger">
+                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+            </button>
+        </div>
+    </header>
 
     <main class="hero">
         <div class="container">
             <div class="hero-content">
                 <img src="logo.png" alt="Logo Returned WoW" class="hero-logo">
-                
                 <h1>Bem-vindo ao informativo do servidor Returned WoW.</h1>
                 <p>Servidor privado brasileiro de World of Warcraft 3.3.5a, totalmente gratuito e com uma comunidade ativa. Aqui nós não apenas jogamos – forjamos memórias inesquecíveis!</p>
                 <p>Sua jornada aguarda, faça o download do jogo e <strong>crie a sua conta.</strong></p>
-                
                 <div class="hero-buttons">
                     <a href="#como-instalar" class="btn btn-primary">COMO INSTALAR</a>
                     <a href="#download" class="btn btn-secondary">DOWNLOAD DO JOGO</a>
@@ -45,43 +46,10 @@
     </main>
 
     <section id="download" class="download-section">
-        <div class="container">
-            <h2>Download do Jogo (Cliente 3.3.5a)</h2>
-            <p class="section-subtitle">Use o link abaixo para baixar o jogo completo via Torrent, a maneira mais rápida e confiável.</p>
-            <div class="download-options">
-                <div class="download-card">
-                    <h3>Download via Torrent (Recomendado)</h3>
-                    <p>Você precisará de um cliente de torrent como o qBittorrent ou uTorrent para baixar o jogo.</p>
-                    <a href="wow-brasil.torrent" class="btn btn-primary">BAIXAR ARQUIVO .TORRENT</a>
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
     <section id="como-instalar" class="install-section">
-        <div class="container">
-            <h2>Como Instalar o Returned WoW</h2>
-            <ol class="install-steps">
-                <li>
-                    <h3>1. Baixe o Jogo Completo (Cliente 3.3.5a)</h3>
-                    <p>Primeiro, você precisa do cliente do jogo na versão 3.3.5a (WotLK). Use a opção de download na seção acima.</p>
-                </li>
-                <li>
-                    <h3>2. Extraia os Arquivos</h3>
-                    <p>Após o download, você terá um arquivo .zip ou .rar. Use um programa como WinRAR ou 7-Zip para extrair a pasta "World of Warcraft 3.3.5a" para um local de sua preferência (Ex: C:\Jogos\).</p>
-                </li>
-                <li>
-                    <h3>3. Altere o Realmlist (Passo Crucial!)</h3>
-                    <p>Vá para a pasta do jogo, depois entre em <strong>Data > ptBR</strong> (ou enUS). Encontre o arquivo <strong>realmlist.wtf</strong>, abra com o Bloco de Notas, apague tudo e cole apenas a linha abaixo:</p>
-                    <div class="code-box">set realmlist returnedwow.com.br</div>
-                </li>
-                <li>
-                    <h3>4. Crie sua Conta e Jogue!</h3>
-                    <p>Crie sua conta aqui no site e use o mesmo login e senha para entrar no jogo. Abra o jogo executando o arquivo <strong>Wow.exe</strong>. Bem-vindo a Northrend!</p>
-                </li>
-            </ol>
-        </div>
-    </section>
+        </section>
 
     <section class="info-section">
         <div class="container">
@@ -99,6 +67,13 @@
                 </div>
                 <a href="https://discord.gg/RwpPu4K4" target="_blank" class="btn btn-discord">DISCORD</a>
             </div>
+            <div class="info-card">
+                <div class="card-text">
+                    <h2>GRUPO NO WHATSAPP</h2>
+                    <p>ENTRE NO NOSSO GRUPO E RECEBA NOTÍCIAS E SUPORTE EM PRIMEIRA MÃO.</p>
+                </div>
+                <a href="https://chat.whatsapp.com/Du2urxmDFO119OMeZDpe1v" target="_blank" class="btn btn-whatsapp">ENTRAR NO GRUPO</a>
+            </div>
         </div>
     </section>
 
@@ -107,6 +82,15 @@
             <p>&copy; 2025 Returned WoW. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>
