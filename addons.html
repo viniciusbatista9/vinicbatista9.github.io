@@ -11,21 +11,28 @@
 </head>
 <body>
 
-   <header class="navbar">
-    <div class="container">
-        <a href="index.html" class="logo">Returned WoW</a>
-        <nav>
-            <ul>
-                <li><a href="index.html">INICIO</a></li>
-                <li><a href="index.html#download">DOWNLOAD</a></li>
-                <li><a href="addons.html">ADDONS</a></li>
-                <li><a href="ranks.html">RANKS</a></li>
-                <li><a href="#" class="btn btn-loja">LOJA</a></li>
-                <li><a href="#" class="btn btn-cta">CRIAR CONTA</a></li>
-            </ul>
-        </nav>
-    </div>
-</header>
+    <header class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">Returned WoW</a>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">INICIO</a></li>
+                    <li><a href="index.html#download">DOWNLOAD</a></li>
+                    <li><a href="addons.html">ADDONS</a></li>
+                    <li><a href="ranks.html">RANKS</a></li>
+                    <li><a href="#" class="btn btn-loja">LOJA</a></li>
+                    <li><a href="#" class="btn btn-cta">CRIAR CONTA</a></li>
+                </ul>
+            </nav>
+
+            <button class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+        </div>
+    </header>
 
     <main class="addons-page">
         <div class="container">
@@ -40,37 +47,31 @@
                     <p>Essencial para PvP (Arenas). Mostra a vida, mana e cooldowns importantes dos seus oponentes.</p>
                     <a href="Wow-Brasil.com-Gladius-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-
                 <div class="addon-card">
                     <h2>QuestHelper</h2>
                     <p>Mostra no mapa onde pegar e entregar missões, tornando o processo de upar muito mais rápido e fácil.</p>
                     <a href="Wow-Brasil.com-QuestHelper-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-                
                 <div class="addon-card">
                     <h2>GearScore</h2>
                     <p>Calcula uma pontuação para seus equipamentos, usada por muitos grupos para recrutar para raides.</p>
                     <a href="Wow-Brasil.com-GearScore-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-
                 <div class="addon-card">
                     <h2>Skada</h2>
                     <p>Mede seu dano (DPS) e cura (HPS) em tempo real. Ótimo para analisar e melhorar seu desempenho.</p>
                     <a href="Wow-Brasil.com-Skada-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-
                 <div class="addon-card">
                     <h2>OmniCC</h2>
                     <p>Adiciona um contador numérico em cima das suas habilidades, mostrando o tempo de recarga exato.</p>
                     <a href="Wow-Brasil.com-Omnicc-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-
                 <div class="addon-card">
                     <h2>PlateBuffs</h2>
                     <p>Mostra os buffs e debuffs importantes diretamente na barra de vida (nameplate) dos inimigos.</p>
                     <a href="Wow-Brasil.com-PlateBuffs-3.3.5a.zip" class="btn btn-secondary">Download</a>
                 </div>
-
                 <div class="addon-card">
                     <h2>NiceDamage</h2>
                     <p>Permite customizar a fonte e a aparência dos números de dano e cura que aparecem na tela.</p>
@@ -85,6 +86,15 @@
             <p>&copy; 2025 Returned WoW. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script>
+        const hamburger = document.querySelector(".hamburger");
+        const navMenu = document.querySelector(".nav-menu");
+        hamburger.addEventListener("click", () => {
+            hamburger.classList.toggle("active");
+            navMenu.classList.toggle("active");
+        });
+    </script>
 
 </body>
 </html>

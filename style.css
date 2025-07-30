@@ -8,7 +8,6 @@
     --cor-texto-titulo: #ffffff; /* Branco para títulos */
 }
 
-/* Adiciona um efeito de rolagem suave para toda a página */
 html {
     scroll-behavior: smooth;
 }
@@ -71,10 +70,6 @@ body {
     transition: color 0.3s ease;
 }
 
-.navbar nav a:hover {
-    color: var(--cor-principal);
-}
-
 /* --- SEÇÃO PRINCIPAL (HERO) --- */
 .hero {
     background-image: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.9)), url('background.jpg');
@@ -94,7 +89,7 @@ body {
     height: auto;
     margin: 0 auto 30px auto;
     display: block;
-    border-radius: 50%; /* Esta linha deixa a imagem redonda */
+    border-radius: 50%;
 }
 
 .hero h1 {
@@ -181,7 +176,6 @@ body {
     background-color: #7649c9;
     transform: translateY(-2px);
 }
-
 
 /* --- SEÇÕES DE INFORMAÇÃO (FAQ, DISCORD) --- */
 .info-section {
@@ -361,38 +355,7 @@ body {
     text-align: center;
 }
 
-/* --- RODAPÉ --- */
-.footer {
-    border-top: 1px solid var(--cor-borda);
-    text-align: center;
-    padding: 30px 0;
-    font-size: 0.9em;
-}
-
-/* --- AJUSTES PARA CELULAR (Responsividade) --- */
-@media (max-width: 768px) {
-    .navbar nav {
-        display: none; 
-    }
-
-    .hero {
-        padding: 150px 0 50px 0;
-    }
-
-    .hero h1 {
-        font-size: 2em;
-    }
-    
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .info-card {
-        flex-direction: column;
-        text-align: center;
-        gap: 20px;
-    }
-}/* --- ESTILOS PÁGINA DE FAQ --- */
+/* --- ESTILOS PÁGINA DE FAQ --- */
 .faq-page {
     padding-top: 120px;
     padding-bottom: 60px;
@@ -432,7 +395,9 @@ body {
     background-color: #010409;
     padding: 2px 5px;
     border-radius: 4px;
-}/* --- ESTILOS PÁGINAS DE CONTEÚDO GENÉRICAS (RANKS, ETC) --- */
+}
+
+/* --- ESTILOS PÁGINAS DE CONTEÚDO GENÉRICAS (RANKS, ETC) --- */
 .content-page {
     padding-top: 120px;
     padding-bottom: 60px;
@@ -456,4 +421,98 @@ body {
 .content-box p {
     line-height: 1.8;
     margin-bottom: 30px;
+}
+
+/* --- RODAPÉ --- */
+.footer {
+    border-top: 1px solid var(--cor-borda);
+    text-align: center;
+    padding: 30px 0;
+    font-size: 0.9em;
+}
+
+/* --- ESTILOS PARA O MENU HAMBÚRGUER (CELULAR) --- */
+.hamburger {
+    display: none;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.hamburger .bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease-in-out;
+    background-color: var(--cor-texto-titulo);
+}
+
+/* --- SEÇÃO DE RESPONSIVIDADE ATUALIZADA --- */
+@media (max-width: 820px) {
+    /* Mostra o botão hambúrguer */
+    .hamburger {
+        display: block;
+    }
+
+    /* Animação do botão para virar um "X" */
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    /* Esconde o menu e o prepara para aparecer */
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: #0d1117;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+    }
+
+    /* Mostra o menu quando o botão é clicado */
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-menu ul {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu li {
+        padding: 16px 0;
+        width: 100%;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+    
+    .btn-cta, .btn-loja {
+        width: 80%;
+        margin: 10px auto;
+        padding: 15px;
+    }
+    
+    .hero {
+        padding: 150px 0 50px 0;
+    }
+    .hero h1 {
+        font-size: 2em;
+    }
+    .hero-buttons {
+        flex-direction: column;
+    }
+    .info-card {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
 }
